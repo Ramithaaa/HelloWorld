@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry='huarami/helloapp'
+        registry='huarami/pythonapp'
         registryCredential='dockerhub'
     }
     stages {
