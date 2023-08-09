@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: pythonapp
-        image: huarami/pythonapp:v2
+        image: huarami/pythonapp:v1
         ports:
         - containerPort: 5000
 
@@ -34,4 +34,4 @@ spec:
   - port: 5000
     targetPort: 5000
     nodePort: 30004
-    
+
