@@ -19,3 +19,18 @@ spec:
         image: huarami/pythonapp:v1
         ports:
         - containerPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+spec:
+  type: NodePort
+  selector:
+    app: python
+  ports:
+  - port: 5000
+    targetPort: 5000
+    nodePort: 30004
