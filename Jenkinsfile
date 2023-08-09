@@ -11,6 +11,13 @@ pipeline {
                     dockerImage=docker.build registry
                 }
             }
-        }    
+        } 
+        stage('Deploy') {
+            steps {
+                script {
+                    kubernetesDeploy(configs: "deployment.yaml", "service.yaml",kubeconfigId:"kubernetes")
+                }
+            }
+        }
     }   
 }
