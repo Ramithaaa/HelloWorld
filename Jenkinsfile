@@ -12,6 +12,16 @@ pipeline {
                 }
             }
         } 
+        stage ('Push to dockerhub') {
+            steps {
+                script {
+                    docker.withRegistry('','registryCredential') {
+                        dockerImage.push('v1')
+                    }
+                }
+            }
+        }
+        
         stage('Deploy') {
             steps {
                 script {
