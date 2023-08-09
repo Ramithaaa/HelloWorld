@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: python
+spec:
+  containers:
+  - name: pythonapp
+    image: huarami/pythonapp
+    ports:
+    - containerPort: 5000
